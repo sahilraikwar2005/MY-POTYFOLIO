@@ -598,3 +598,115 @@ html { scroll-behavior: smooth; }
     .pos-3 { bottom: 5%; left: -10px; }
     .pos-4 { bottom: 5%; right: -10px; }
 }
+
+/* =========================================
+   SKILLS SECTION STYLING
+   ========================================= */
+.skills-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Taki mobile pe niche aa jaye */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Glass Card Style */
+.skill-card {
+    background: rgba(255, 255, 255, 0.05); /* Transparent Glass */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px 20px;
+    border-radius: 20px;
+    width: 220px;
+    text-align: center;
+    transition: 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect (Upar Uthna + Glow) */
+.skill-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #1e88e5; /* Blue Border */
+    box-shadow: 0 0 25px rgba(30, 136, 229, 0.4); /* Blue Neon Glow */
+}
+
+/* Icons */
+.skill-icon {
+    font-size: 3.5rem;
+    color: #1e88e5;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.skill-card:hover .skill-icon {
+    color: #fff; /* Hover pe icon white hoga */
+    transform: scale(1.1);
+}
+
+/* React Icon Spin Animation */
+.spin-icon {
+    animation: spinReact 10s linear infinite;
+}
+
+@keyframes spinReact {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Text Styling */
+.skill-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.skill-card p {
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Badge (Tag) Styling */
+.skill-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    background: rgba(30, 136, 229, 0.2); /* Light Blue bg */
+    color: #1e88e5;
+    border: 1px solid #1e88e5;
+    font-weight: 500;
+}
+
+/* Learning Badge (Yellow/Orange) */
+.skill-tag.learning {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+    border: 1px solid #ffc107;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    .skills-container {
+        gap: 15px;
+    }
+    .skill-card {
+        width: 45%; /* Mobile pe 2 cards ek line me */
+        padding: 20px 10px;
+    }
+    .skill-icon {
+        font-size: 2.5rem;
+    }
+    .skill-card h3 {
+        font-size: 1rem;
+    }
+}
